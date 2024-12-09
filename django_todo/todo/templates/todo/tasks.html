@@ -1,0 +1,54 @@
+{% extends 'index.html' %} {% block content %}
+
+<div
+  style="flex-direction: column; width: 60%; margin: auto auto; display: flex"
+>
+  <h1 style="font-size: 24px; color: white">All Tasks</h1>
+  {% for task in tasks %}
+  <h1 style="font-size: 18px; color: white; font-weight: 400">
+    {{ task.Title }}
+  </h1>
+  {% endfor %}
+
+  <div
+    style="
+      display: flex;
+      align-items: center;
+      width: 100%;
+      gap: 16px;
+      margin: 16px auto;
+    "
+  >
+    <a href="{% url 'CreateTask' %}">
+      <button
+        style="
+          border-radius: 10px;
+          padding: 8px 16px;
+          background-color: whitesmoke;
+          color: black;
+          border: 0;
+          outline: none;
+          cursor: pointer;
+        "
+      >
+        Add Task
+      </button>
+    </a>
+    <a href="{% url 'Index' %}">
+      <button
+        style="
+          border-radius: 10px;
+          padding: 8px 16px;
+          background-color: whitesmoke;
+          color: black;
+          border: 0;
+          outline: none;
+          cursor: pointer;
+        "
+      >
+        Home Page
+      </button>
+    </a>
+  </div>
+</div>
+{% endblock content %}

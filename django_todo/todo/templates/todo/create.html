@@ -1,0 +1,58 @@
+{% extends 'index.html' %} {% block content %}
+
+<div
+  style="
+    flex-direction: column;
+    height: 60%;
+    width: 60%;
+    margin: auto auto;
+    display: flex;
+  "
+>
+  <h1>Create A New Task</h1>
+  <form
+    style="
+      width: 100%;
+      padding: 4px 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: start;
+      justify-items: start;
+    "
+    method="post"
+    action="/todoCreate/"
+  >
+    {% csrf_token %}
+    <label style="font-size: 10px; color: white"> Task Title: </label>
+    <input
+      style="
+        width: 80%;
+        border-radius: 18px;
+        padding: 10px 8px;
+        color: black;
+        outline: none;
+        border: 0;
+      "
+      id="title"
+      name="title"
+      placeholder="Name for task"
+      type="text"
+      required
+    />
+    <button
+      style="
+        border-radius: 20px;
+        padding: 8px 16px;
+        background-color: whitesmoke;
+        color: black;
+        border: 0;
+        outline: none;
+        cursor: pointer;
+      "
+    >
+      Add Task
+    </button>
+  </form>
+</div>
+{% endblock content %}
